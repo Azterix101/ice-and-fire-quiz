@@ -59,6 +59,52 @@ ice-and-fire-quiz/
 - **Scoring System**: Tracks the user's score throughout the quiz.
 - **Error Handling**: Gracefully handles errors and continues the quiz.
 
+Sure! Here's a high-level design (HLD) for the Ice and Fire Quiz Game project using PlantUML. This diagram will illustrate the main components and their interactions.
+
+### PlantUML Diagram
+
+```puml
+@startuml
+
+package "Ice and Fire Quiz Game" {
+    [User] --> (Start Quiz)
+    (Start Quiz) --> (Fetch Characters)
+    (Fetch Characters) --> (Generate Question)
+    (Generate Question) --> (Display Question)
+    (Display Question) --> (Get User Input)
+    (Get User Input) --> (Check Answer)
+    (Check Answer) --> (Update Score)
+    (Update Score) --> (Display Result)
+    (Display Result) --> (Next Question)
+    (Next Question) --> (Generate Question)
+    (Next Question) --> (End Quiz)
+}
+
+package "API of Ice and Fire" {
+    (Fetch Characters) --> [API Endpoint]
+}
+
+@enduml
+```
+
+### Explanation
+
+- **User**: The person interacting with the quiz game.
+- **Start Quiz**: The initial action to start the quiz.
+- **Fetch Characters**: Fetches multiple characters from the API of Ice and Fire.
+- **Generate Question**: Generates a quiz question based on the fetched characters.
+- **Display Question**: Displays the generated question and options to the user.
+- **Get User Input**: Captures the user's answer.
+- **Check Answer**: Checks if the user's answer is correct.
+- **Update Score**: Updates the user's score based on the answer.
+- **Display Result**: Displays the result of the current question.
+- **Next Question**: Proceeds to the next question or ends the quiz if all questions are answered.
+- **API Endpoint**: Represents the API of Ice and Fire used to fetch character data.
+
+
+![alt text](High-level-diagram.png)
+
+
 ## Contributing
 
 Contributions are welcome! Please follow these steps to contribute:
