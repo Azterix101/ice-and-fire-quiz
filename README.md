@@ -1,5 +1,3 @@
-Sure! Here's a sample `README.md` file for your quiz game project:
-
 ```markdown
 # Ice and Fire Quiz Game
 
